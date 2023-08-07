@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <link href="css/style.css" rel="stylesheet" type="text/css" />
+  <meta charset="utf-8">
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+    integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" rel="stylesheet">
+  <title>Fisheye - photographe </title>
+</head>
+
+<body>
+  <header>
+    <a href="index.html" aria-label="Liens vers la page d’accueil">
+      <img src="assets/images/logo.png" class="logo" alt="Fisheye Home page" />
+    </a>
+    <h1 aria-label="Texte statique">Nos photographes</h1>
+  </header>
+  <main id="main">
+    <div class="photographer_section"></div>
+  </main>
+
+  <!-- Factories -->
+  <script src="js/factories/ContentsFactories.js"></script>
+
+  <!-- Models -->
+  <script src="/js/models/Photographers.js"></script>
+  <script src="/js/models/media.js"></script>
+
+  <!-- Templates -->
+  <script src="js/templates/HtmlCard.js"></script>
+
+  <!-- Api -->
+  <script src="/js/api/Api.js"></script>
+
+  <!-- Entry point -->
+  <script src="js/IndexHtml.js"></script>
+
+
+</body>
+
+</html>

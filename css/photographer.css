@@ -1,0 +1,368 @@
+#contact_modal {
+    display: none;
+}
+
+.photographer_header>.block-profil {
+    background-color: #FAFAFA;
+    height: 300px;
+    margin: 0 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.photographer_header img {
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.photographer_header h1 {
+    margin: 0;
+    font-weight: normal;
+    font-size: 64px;
+    line-height: 83px;
+    color: #D3573C;
+}
+
+.photographer_header h2 {
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 31px;
+    color: #901C1C;
+    padding-top: 0px;
+    margin-bottom: 0px;
+    margin-top: 10px;
+}
+
+.filter-condition {
+    display: flex;
+    column-gap: 10px;
+}
+
+.filter-condition>span {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+#select-box {
+    width: 170px;
+    height: 69px;
+    background-color: #901C1C;
+    border-radius: 5px;
+    appearance: none;
+    color: white;
+
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.select-container .icon-container {
+    width: 50px;
+    height: 100%;
+    position: absolute;
+    /* right: 0; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+label { 
+    font-family: DM Sans;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 23px;
+    letter-spacing: 0em;
+    text-align: left;
+
+}
+
+/* filter */
+.dropdown{
+    position: relative;
+    display: inline-block;
+    margin-left: 25px;
+    padding: 0;
+    box-sizing: border-box;
+    width: 170px;
+    background: #911C1C;
+    border-radius: 5px;
+    text-align: start;
+    font-size: 18px;
+    font-family: inherit;
+    font-weight: bold;
+    line-height: 23px;
+    color: #FFFFFF;
+    appearance: none;
+    cursor: pointer;
+    border: none;
+}
+
+.dropdown button{
+    display: block;
+    padding: 20px 20px 20px;
+    width: 100%;
+    margin: 0;
+    border: 0;
+    background: none;
+    text-align: inherit;
+    font-size: inherit;
+    font-family: inherit;
+    color: inherit;
+    font-weight: inherit;
+}
+
+.dropdown::before{
+    content: ' '; 
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    right: 20px;
+    top: 15px;
+    z-index: 10000;
+    border: 2px solid  #901C1C;
+    border-bottom: 2px solid  #fff;
+    border-left: 2px solid #fff;
+    transform: rotate(-45deg);
+    transition: 0.5s;
+    pointer-events: none ;
+
+}
+
+.dropdown-options{
+    position: absolute;
+    top: 100%;
+    left: 0;
+    display: none;
+    z-index: 1;
+    background: #911C1C;
+    width: 100%;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    border-radius: 0 0 5px 5px;
+    overflow: hidden;
+
+}
+
+.dropdown-options li{
+    position: relative;
+    padding: 14px 20px 14px;
+}
+
+.dropdown .dropdown-options li:hover{
+    background-color: #D3573C;
+    color: #000000;
+}
+
+/* activate the filter */
+.dropdown.activate .dropdown-options{
+    display: block;
+}
+ 
+.dropdown.activate::before{
+    top: 25px;
+    transform: rotate(-225deg) ;
+}
+
+
+
+
+/* .filter-condition > select{
+    font-size: 18px;
+    font-weight: bold;
+    color: #FFFFFF;
+    border: none;
+    padding: 20px 20px 20px;
+    position: relative;
+    margin-left: 25px;
+    width: 170px;
+    background: #911C1C;
+    border-radius: 5px;
+} */
+
+.select-container {
+    display: flex;
+    min-width: 250px;
+    height: 50px;
+}
+
+.photographer_header p {
+    font-size: 18px;
+    color: #525252;
+}
+
+.photographer_content {
+    margin: 0 100px;
+    margin-top: 2rem;
+
+}
+
+.filter-condition {
+    margin-bottom: 2rem;
+}
+
+.contact_button {
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    padding: 11px;
+    width: 170px;
+    height: 70px;
+    border: none;
+    background-color: #901C1C;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.modal {
+    border-radius: 5px;
+    background-color: #DB8876;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 35px;
+    margin: auto;
+}
+
+.modal header {
+    justify-content: space-between;
+    width: 100%;
+}
+
+.modal header img {
+    cursor: pointer;
+}
+
+.modal header h2 {
+    font-size: 64px;
+    font-weight: normal;
+    text-align: center;
+}
+
+form {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+form label {
+    color: #312E2E;
+    font-size: 36px;
+}
+
+form div {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: self-start;
+    margin-bottom: 26px;
+}
+
+form input {
+    width: 100%;
+    height: 68px;
+    border: none;
+    border-radius: 5px;
+}
+
+
+
+.picture_section {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 10px;
+}
+
+
+.picture_section h3 {
+    color: #901C1C;
+    font-size: 24px;
+    margin: 0px;
+}
+
+.content {
+    Width: 350px;
+    Height: 351px;
+}
+
+.picture_section i {
+    color: #911C1C;
+    cursor: pointer;
+    font-size: 24px;
+}
+
+.like_management {
+    display: flex;
+    gap: 1rem;
+    /* width: 22px;
+    height: 31px; */
+}
+
+.bground {
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+    background-color: RGBA(196, 196, 196, 0.4);
+}
+
+.thumb-img {
+    object-fit: cover;
+    border-radius: 5px;
+    background: grey;
+    width: 100%;
+    height: 300px;
+}
+
+video {
+    overflow-clip-margin: content-box;
+    overflow: clip;
+}
+
+.price_likes {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    right: 36px;
+    bottom: 0;
+    height: 68px;
+    padding: 0 30px;
+    background: #DB8876;
+    border-radius: 5px 5px 0 0;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 31px;
+}
+
+.thumb-info {
+    margin: 10px 0 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.likes {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#numbersOfLikes {
+    font-weight: 300;
+    font-size: 24px;
+    color: #911C1C;
+}
+
+/* .like_management>i {
+    font-size: 36px;
+    cursor: pointer;
+} */

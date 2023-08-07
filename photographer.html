@@ -1,0 +1,132 @@
+<!-- // Manage the button sort  -->
+
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <link href="css/style.css" rel="stylesheet" type="text/css" />
+  <link href="css/lightbox.css" rel="stylesheet" type="text/css" />
+  <meta charset="utf-8">
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+    integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer">
+  <link href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap" rel="stylesheet">
+  <title>Fisheye - photographe </title>
+</head>
+
+<body>
+  <header>
+    <a href=index.html aria-label="Liens vers la page d’accueil">
+      <img src="assets/images/logo.png" class="logo" alt="Fisheye Home page" />
+    </a>
+  </header>
+  <main id="main">
+    <div class="photographer_header"></div>
+    <div class="photographer_content">
+      <label class="dropdown-label">Trier par</label>
+      <div class="dropdown">
+        <button onclick="showDropdown()" id="dropdownButton" data-value="Popularité">Popularité</button>
+        <ul class="dropdown-options">
+          <li class="select" data-value="Popularité" onclick="app.selectOption(this)">Popularité</li>
+          <li class="select" data-value="Date" onclick="app.selectOption(this)">Date</li>
+          <li class="select" data-value="Titre" onclick="app.selectOption(this)">Titre</li>
+        </ul>
+      </div>
+      <div class="picture_section">
+      </div>
+    </div>
+  </main>
+  <div id="contact_modal" class="bground">
+    <div class="modal">
+      <header>
+        <h2>Contactez-moi</h2>
+        <img src="assets/icons/close.svg" onclick="closeModal()" />
+      </header>
+      <form method="get">
+        <div>
+          <label for="firstName" id="firstNameLabel">Prénom</label>
+          <input type="text" name="firstName" id="firstName" role="textbox" aria-label="First name"
+            aria-labelledby="firstNameLabel" required="">
+        </div>
+        <div>
+          <label for="lastName" id="lastNameLabel">Nom</label>
+          <input type="text" name="lastName" id="lastName" role="textbox" aria-label="First name"
+            aria-labelledby="firstNameLabel" required="">
+        </div>
+        <div>
+          <label for="email" id="emailLabel">Email</label>
+          <input type="email" name="email" id="email" role="textbox" aria-label="Email" aria-labelledby="emailLabel"
+            required="">
+        </div>
+        <div>
+          <label for="Message" id="yourMessageLabel">Votre message</label>
+          <textarea name="Message" id="Message" role="textbox" aria-label="Your message" aria-labelledby="MessageLabel"
+            required="" cols="82" rows="15"></textarea>
+          <!-- <input /> -->
+        </div>
+        <button class="contact_button">Envoyer</button>
+      </form>
+    </div>
+  </div>
+  <div class="price_likes">
+    <div>
+      <span class="sum_likes"></span>
+      <i class="fa-solid fa-heart"></i>
+    </div>
+    <div>
+      <span id="rate_placeholder"></span>€ / jour
+    </div>
+  </div>
+
+  <!-- Factories -->
+  <script src="js/factories/ContentsFactories.js"></script>
+
+  <!-- Models -->
+  <script src="/js/models/Photographers.js"></script>
+  <script src="/js/models/media.js"></script>
+
+  <!-- Templates -->
+  <script src="js/templates/HtmlCard.js"></script>
+
+
+  <!-- Api -->
+  <script src="/js/api/Api.js"></script>
+
+  <!-- Entry point -->
+  <script src="/js/PhotographerHtml.js"></script>
+
+  <!-- Contact form -->
+  <script src="js/utils/contactForm.js"></script>
+
+  <!-- lightbox -->
+  <script src="js/utils/lightbox.js" type="module"></script>
+
+  <!-- body-scroll -->
+  <script src="js/utils/body-scroll-lock.js"></script>
+
+
+  <script>
+    // function showDropdown() {
+    //   const dropdown = document.querySelector('.dropdown ');
+    //   dropdown.onclick = function () {
+    //     dropdown.classList.toggle('activate');
+    //   }
+    // }
+
+    // function selectOption(liElement) {
+    //   const selectedValue = liElement.getAttribute("data-value");
+
+    //   const button = document.getElementById("dropdownButton");
+    //   button.innerText = selectedValue;
+    //   button.dataset.value = selectedValue
+    // }
+
+  </script>
+
+
+</body>
+
+</html>
+
