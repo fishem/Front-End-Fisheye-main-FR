@@ -1,5 +1,5 @@
 
-import { enableBodyScroll, disableBodyScroll } from './body-scroll-lock.js'
+// import { enableBodyScroll, disableBodyScroll } from './body-scroll-lock.js'
 
 class Lightbox {
     static init() {
@@ -15,6 +15,7 @@ class Lightbox {
                     const titleImage = content.querySelector('.image_title').textContent
 
                     const url = thumbImg.querySelector('a').getAttribute('href') // To check w/ Rudy why error when we use thumbImg.getAttribute('href')
+                    console.log(thumbImg.querySelector('a'))
                     const links = Array.from(document.querySelectorAll('a[href$=".jpg"], a[href$=".mp4"]'))
                     const imagesGallery = links.map(link => link.getAttribute('href'))
 
@@ -26,6 +27,10 @@ class Lightbox {
             })
         }, 300)
     }
+
+    // static load (){
+        
+    // }
     constructor(url, imagesGallery, titleImage, titleGallery) {
         this.url = url
         this.titleImage = titleImage
@@ -37,7 +42,7 @@ class Lightbox {
 
         this.onKeyUp = this.onKeyUp.bind(this)
         document.body.appendChild(this.element)
-        disableBodyScroll(this.element)
+        // disableBodyScroll(this.element)
         document.addEventListener('keyup', this.onKeyUp)
     }
     loadImage(url, titleImage) {
@@ -66,7 +71,6 @@ class Lightbox {
         }
     }
 
-
     onKeyUp(e) {
         if (e.key === 'Escape') {
             this.close(e)
@@ -80,7 +84,7 @@ class Lightbox {
     close(e) {
         e.preventDefault()
         this.element.classList.add('fadeOut')
-        enableBodyScroll(this.element)
+        // enableBodyScroll(this.element)
         window.setTimeout(() => {
             this.element.parentElement.removeChild(this.element)
         }, 500)
@@ -102,7 +106,6 @@ class Lightbox {
     }
 
 
-
     next(e) {
         e.preventDefault()
         let position = this.images.findIndex(image => image === this.url)
@@ -113,7 +116,6 @@ class Lightbox {
         }
         this.loadImage(this.images[position + 1], this.titleGallery[titlePosition + 1])
     }
-
 
 
     buildDOM() {
@@ -143,4 +145,8 @@ class Lightbox {
 
 
 
-Lightbox.init()
+// Lightbox.init()
+
+document.addEventListener("DOMContentLoaded", (event) => {
+    Lightbox.init()
+  });

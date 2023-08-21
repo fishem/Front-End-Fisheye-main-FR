@@ -19,35 +19,50 @@ class App {
 
   async main() {
     const photographersData = await this.photographersApi.get();
-
     const media = photographersData.media.map(content => new ContentsFactory(content, 'media'));
-
-
+    
     this.photograph = new Photographers(photographersData.photographers.find(obj => obj.id === +this.pageId));
     this.dataMedia = media.filter(obj => obj.photographerId === +this.pageId);
-
+    
+    const formTitle = document.querySelector('#formName')
+    formTitle.innerHTML = 'Contactez-moi '+ '<br />' + this.photograph._name
 
     this.renderProfilCard(this.photograph);
     this.renderContentCards(this.dataMedia, this.photograph, this.pageId);
     this.renderIndexCards(this.photograph);
-
   }
+
+
 
   showDropdown() {
     const dropdown = document.querySelector('.dropdown ');
+    const button = document.getElementById("dropdownButton");
+    const select = Array.from(document.querySelectorAll('.select'))
+    const listOfLi = select.map(elem => elem.getAttribute('data-value'))
+
+    
     dropdown.onclick = function () {
       dropdown.classList.toggle('activate');
-    }
+      listOfLi.forEach(value => {
+        const li = document.querySelector(`li[data-value="${value}"]`);
+        if (value === button.getAttribute('data-value')) {
+          li.style.display = 'none';
+        } else {
+          li.style.display = 'block';
+        }
+      });
+    };
   }
+
 
   selectOption(liElement) {
     const selectedValue = liElement.getAttribute("data-value");
     const button = document.getElementById("dropdownButton");
     button.innerText = selectedValue;
     button.dataset.value = selectedValue
-    console.log(this.pageId)
 
     this.photoFilter(selectedValue, this.dataMedia, this.photograph, this.pageId);
+    setTimeout(()=>{Lightbox.init()},300)
 
   }
 
