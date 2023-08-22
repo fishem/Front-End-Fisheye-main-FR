@@ -3,7 +3,7 @@ class App {
     this._queryString = window.location.search;
     this.$photographersWrapper = document.querySelector(".photographer_header");
     this.$contentWrapper = document.querySelector(".picture_section");
-    this.photographersApi = new PhotographersApi('/data/photographers.json');
+    this.photographersApi = new PhotographersApi('data/photographers.json');
 
     this.dataMedia = []; // Initialize as empty arrays or appropriate initial values
     this.photograph = null;
