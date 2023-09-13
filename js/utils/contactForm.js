@@ -1,13 +1,21 @@
+const modal = document.getElementById("contact_modal");
+
 function displayModal() {
     const modal = document.getElementById("contact_modal");
     resetFormData()
     modal.style.display = "block";
+    modal.focus(); // Set focus to the modal
 }
 
-function closeModal() {
+function closeModal(event) {
+    // event.preventDefault()
     const modal = document.getElementById("contact_modal");
     console.log(getFormData());
+
+    
     modal.style.display = "none";
+    
+
 }
 
 function resetFormData() {
@@ -25,6 +33,14 @@ function getFormData() {
     return { firstName, lastName, email, Message };
 }
 
+function closeKey(event) {
+    if (event.key === 'Escape') {
+        modal.style.display = "none";
+    }
+}
+
+
+
 
 // Function to handle form submission
 function sendForm(event) {
@@ -35,9 +51,11 @@ function sendForm(event) {
     // Optional: Display a success message
     alert("Form submitted successfully!");
 
-    closeModal(); // Close the contact modal after form submission
+    closeModal(event); // Close the contact modal after form submission
+    
 }
 
 // Event listener for the contact form submission
 document.querySelector("#contact_modal form").addEventListener("submit", sendForm);
+document.addEventListener('keydown',closeKey)
 

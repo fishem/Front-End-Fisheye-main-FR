@@ -39,6 +39,10 @@ class App {
     const button = document.getElementById("dropdownButton");
     const select = Array.from(document.querySelectorAll('.select'))
     const listOfLi = select.map(elem => elem.getAttribute('data-value'))
+    const dropdownMenu = document.querySelector('.dropdown-options')
+    const dropdownMenuItems = dropdownMenu.children
+
+
 
     
     dropdown.onclick = function () {
@@ -51,7 +55,28 @@ class App {
           li.style.display = 'block';
         }
       });
+
+
     };
+
+    let active = -1
+    document.addEventListener('keydown', function(e){
+      if(e.key==='ArrowDown'){
+        if(active<dropdownMenuItems.length-1){
+          active++
+          dropdownMenuItems[active].querySelector('a').focus()
+
+        }
+      }else if (e.key==='ArrowUp'){
+        if(active>-1){
+          active--
+          dropdownMenuItems[active].querySelector('a').focus()
+
+        }
+        
+      }
+    })
+
   }
 
 

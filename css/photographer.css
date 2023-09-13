@@ -1,3 +1,13 @@
+
+
+html {
+    --blue: #147ec1;
+    --lgt-blue: #3db5eb;
+    --lgtr-blue: #a6f7ff;
+    --drk-blue: #1663a0;
+    --black: #32383c;
+  }
+
 #contact_modal {
     display: none;
 }
@@ -384,3 +394,12 @@ video {
     font-size: 36px;
     cursor: pointer;
 } */
+
+.select:focus {
+    outline: 2px solid blue;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
